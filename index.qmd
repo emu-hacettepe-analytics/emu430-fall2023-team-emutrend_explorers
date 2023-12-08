@@ -7,18 +7,27 @@ This is our project webpage.
 
 Please stay tuned to follow our project activities.
 
-This is our template.
-
 # Team Members
 
-1.  [Edin_Džeko](https://tr.wikipedia.org/wiki/Edin_D%C5%BEeko)
+1.  [Dilan Su Fırat](https://github.com/sufirat)
 
-2.  [Dušan Tadić](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
+2.  [Zümrüt Zeynep Özsoy](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
 
-3.  [Frederico Rodrigues de Paula Santos](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
+3.  [Miray Elif Erdemli](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
 
-4.  [Sebastian Szymański](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+4.  [Sena Nur Enşici](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+
+5.  [Gülin Uysal](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+
+6.  [Yasin Duran](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+
+
+
 
 # Project Topic
 
+This project aims to conduct a comprehensive analysis of student profiles using the YOK ATLAS dataset, delving into preferences, achievements, and various characteristics across distinct student groups. This analysis seeks to provide a valuable resource for educational institutions and guidance departments to comprehend factors influencing student success
+
 # Data Set
+
+YÖK ATLAS database is used in this project due to access to large data set in thestats package
