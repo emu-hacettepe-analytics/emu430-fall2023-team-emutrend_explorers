@@ -1,5 +1,5 @@
 ---
-title: "Team XXX"
+title: "Team EMUTrend Explorers"
 sidebar: false 
 ---
 
@@ -9,25 +9,28 @@ Please stay tuned to follow our project activities.
 
 # Team Members
 
-1.  [Dilan Su Fırat](https://github.com/sufirat)
+1.  [Dilan Su Firat](https://github.com/sufirat)
 
-2.  [Zümrüt Zeynep Özsoy](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
+2.  [Zumrut Zeynep Ozsoy](https://github.com/zzeynepo)
 
-3.  [Miray Elif Erdemli](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
+3.  [Miray Elif Erdemli](https://github.com/MirayElifErdemli)
 
-4.  [Sena Nur Enşici](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+4.  [Sena Nur Ensici](https://github.com/ensici)
 
-5.  [Gülin Uysal](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+5.  [Gulin Unsal](https://github.com/gulinunsal)
 
-6.  [Yasin Duran](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+6.  [Yasin Duran](https://github.com/Yasinduran2200469822)
 
+# *Project Topic*
 
+Data-Driven Insights into Student Preferences: A Case Study on Industrial Engineering Departments in Ankara using the YOK ATLAS dataset
 
+# *Data Set*
 
-# Project Topic
+Y??K ATLAS database is used in this project due to access to large data set in thestats package.
 
-This project aims to conduct a comprehensive analysis of student profiles using the YOK ATLAS dataset, delving into preferences, achievements, and various characteristics across distinct student groups. This analysis seeks to provide a valuable resource for educational institutions and guidance departments to comprehend factors influencing student success
+[***Y??K ATLAS :***]{.underline} refers to a web-based platform provided by the Council of Higher Education in Turkey (Y??ksek????retim Kurulu or Y??K in Turkish). Y??K ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey.
 
-# Data Set
+[Y??K ATLAS](https://yokatlas.yok.gov.tr/)
 
-YÖK ATLAS database is used in this project due to access to large data set in thestats package
+![](images/Y??K.png){width="500" height="300"}
