@@ -7,7 +7,7 @@ This is our project webpage.
 
 Please stay tuned to follow our project activities.
 
-# Team Members
+# *Team Members*
 
 1.  [Dilan Su Firat](https://github.com/sufirat)
 
@@ -23,12 +23,11 @@ Please stay tuned to follow our project activities.
 
 # *Project Topic*
 
-*Data-Driven Insights into Student Preferences:* A Case Study on Industrial Engineering Departments in Ankara using the YOK ATLAS dataset
+**Data-Driven Insights into Student Preferences***:* A Case Study on Industrial Engineering Departments in Ankara using the YOK ATLAS dataset
 
 # *Data Set*
 
 YOK ATLAS database is used in this project due to access to large data set in thestats package.
 
-[***YOK ATLAS :***]{.underline} refers to a web-based platform provided by the Council of Higher Education in Turkey. YOK ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey.
 
-[YOK ATLAS](https://yokatlas.yok.gov.tr/)
+[YOK ATLAS](https://yokatlas.yok.gov.tr/) :refers to a web-based platform provided by the Council of Higher Education in Turkey. YOK ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey. 
