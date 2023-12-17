@@ -1,5 +1,5 @@
 ---
 title: "Data"
 ---
-
-Data source: xxx
+You can reach our data through this link : 
+[Our data](https://github.com/emu-hacettepe-analytics/emu430-fall2023-team-emutrend_explorers/blob/master/ourdata.rda)
