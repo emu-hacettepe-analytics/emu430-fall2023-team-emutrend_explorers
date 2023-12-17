@@ -16,6 +16,7 @@ You can reach our data through this link : [Our data](https://github.com/emu-hac
 
 
 ```{r}
+
 library(thestats)
 
 data <- list_score(region_names = "all", city_names = "Ankara",
@@ -32,4 +33,5 @@ colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty
                         "Number of students placed in 1st choice", "Number of students placed in 2nd choice", "Number of students placed in 3rd choice",
                         "Number of students placed in 4th choice","Number of students placed in 5th choice","Number of students placed in 6th choice",
                         "Number of students placed in 7th choice","Number of students placed in 8th choice","Number of students placed in 9th choice")
+
 ```
