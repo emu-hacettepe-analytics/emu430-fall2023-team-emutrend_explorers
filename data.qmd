@@ -15,11 +15,13 @@ You can reach our data through this link : [Our data](https://github.com/emu-hac
 -   Data has been recorded.
 
 
-```{r}
 
+```{r}
 library(dplyr)
 library(thestats)
+```
 
+```{r}
 data <- list_score(region_names = "all", city_names = "Ankara",
                    university_names = "all", department_names= "Industrial Engineering",
                    lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", 
