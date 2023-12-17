@@ -177,7 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Data has been recorded.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(thestats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'thestats' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Zorunlu paket yükleniyor: dplyr</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'dplyr' was built under R version 4.3.2</code></pre>
 </div>
@@ -195,24 +201,22 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(thestats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'thestats' was built under R version 4.3.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">list_score</span>(<span class="at">region_names =</span> <span class="st">"all"</span>, <span class="at">city_names =</span> <span class="st">"Ankara"</span>,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">university_names =</span> <span class="st">"all"</span>, <span class="at">department_names=</span> <span class="st">"Industrial Engineering"</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lang =</span> <span class="st">"en"</span>, <span class="at">var_ids=</span><span class="fu">c</span>(<span class="st">"X141"</span>, <span class="st">"X142"</span>, <span class="st">"X143"</span>, <span class="st">"X144"</span>, <span class="st">"X145"</span>, <span class="st">"X146"</span>,<span class="st">"X147"</span>, <span class="st">"X148"</span>, <span class="st">"X149"</span>, </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"X151"</span>, <span class="st">"X152"</span>, <span class="st">"X153"</span>, <span class="st">"X154"</span>, <span class="st">"X155"</span>, <span class="st">"X156"</span>, <span class="st">"X157"</span>, <span class="st">"X158"</span>, <span class="st">"X159"</span>))</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>our_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, department <span class="sc">!=</span> <span class="st">"Woodworking Industrial Engineering"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>our_data <span class="ot">&lt;-</span><span class="fu">na.omit</span>(our_data)</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">list_score</span>(<span class="at">region_names =</span> <span class="st">"all"</span>, <span class="at">city_names =</span> <span class="st">"Ankara"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">university_names =</span> <span class="st">"all"</span>, <span class="at">department_names=</span> <span class="st">"Industrial Engineering"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lang =</span> <span class="st">"en"</span>, <span class="at">var_ids=</span><span class="fu">c</span>(<span class="st">"X141"</span>, <span class="st">"X142"</span>, <span class="st">"X143"</span>, <span class="st">"X144"</span>, <span class="st">"X145"</span>, <span class="st">"X146"</span>,<span class="st">"X147"</span>, <span class="st">"X148"</span>, <span class="st">"X149"</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                                          <span class="st">"X151"</span>, <span class="st">"X152"</span>, <span class="st">"X153"</span>, <span class="st">"X154"</span>, <span class="st">"X155"</span>, <span class="st">"X156"</span>, <span class="st">"X157"</span>, <span class="st">"X158"</span>, <span class="st">"X159"</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>our_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, department <span class="sc">!=</span> <span class="st">"Woodworking Industrial Engineering"</span>)</span>
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(our_data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"Year"</span>,<span class="st">"Type"</span>,<span class="st">"Program Code"</span>,<span class="st">"University"</span>,<span class="st">"Faculty"</span>,<span class="st">"Department"</span>,<span class="st">"Number of choices in 1st place"</span>,<span class="st">"Number of choices in 2nd place"</span>,</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of choices in 3rd place"</span>,<span class="st">"Number of choices in 4th place"</span>,<span class="st">"Number of choices in 5th place"</span>,<span class="st">"Number of choices in 6th place"</span>,</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of choices in 7th place"</span>,<span class="st">"Number of choices in 8th place"</span>,<span class="st">"Number of choices in 9th place"</span>,</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of students placed in 1st choice"</span>, <span class="st">"Number of students placed in 2nd choice"</span>, <span class="st">"Number of students placed in 3rd choice"</span>,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of students placed in 4th choice"</span>,<span class="st">"Number of students placed in 5th choice"</span>,<span class="st">"Number of students placed in 6th choice"</span>,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of students placed in 7th choice"</span>,<span class="st">"Number of students placed in 8th choice"</span>,<span class="st">"Number of students placed in 9th choice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>our_data <span class="ot">&lt;-</span><span class="fu">na.omit</span>(our_data)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(our_data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ID"</span>, <span class="st">"Year"</span>,<span class="st">"Type"</span>,<span class="st">"Program Code"</span>,<span class="st">"University"</span>,<span class="st">"Faculty"</span>,<span class="st">"Department"</span>,<span class="st">"Number of choices in 1st place"</span>,<span class="st">"Number of choices in 2nd place"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of choices in 3rd place"</span>,<span class="st">"Number of choices in 4th place"</span>,<span class="st">"Number of choices in 5th place"</span>,<span class="st">"Number of choices in 6th place"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of choices in 7th place"</span>,<span class="st">"Number of choices in 8th place"</span>,<span class="st">"Number of choices in 9th place"</span>,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of students placed in 1st choice"</span>, <span class="st">"Number of students placed in 2nd choice"</span>, <span class="st">"Number of students placed in 3rd choice"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of students placed in 4th choice"</span>,<span class="st">"Number of students placed in 5th choice"</span>,<span class="st">"Number of students placed in 6th choice"</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Number of students placed in 7th choice"</span>,<span class="st">"Number of students placed in 8th choice"</span>,<span class="st">"Number of students placed in 9th choice"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
