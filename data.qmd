@@ -17,8 +17,8 @@ You can reach our data through this link : [Our data](https://github.com/emu-hac
 
 ```{r}
 
+install.packages("dplyr")
 library(thestats)
-library(dplyr)
 
 data <- list_score(region_names = "all", city_names = "Ankara",
                    university_names = "all", department_names= "Industrial Engineering",
