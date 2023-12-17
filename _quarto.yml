@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "xxx' Project Lab"
+  title: "EMUTrend Explorers' Project Lab"
   navbar:
     search: true
     left:
@@ -17,7 +17,7 @@ website:
             
     tools:
       - icon: github
-        href: https://twitter.com
+        href: https://github.com/emu-hacettepe-analytics/emu430-fall2023-team-emutrend_explorers
 
   page-navigation: true
   back-to-top-navigation: true
@@ -29,8 +29,8 @@ format:
     toc: true
     toc-location: left
     theme: 
-      light: simplex 
-      dark: cyborg
+      light: minty
+      dark: vapor
     css: styles.css
 
 
