@@ -30,6 +30,7 @@ You can reach our data through this link : [Our data](https://github.com/emu-hac
 -   Data has been recorded.
 
 ```{r}
+
 #| code-fold: true
 #| code-summary: "Show the code"
 
