@@ -2,31 +2,16 @@
 title: "Data"
 ---
 
-Data:  YÖK ATLAS database is used in this project due to access to large data set in thestats package.
+Data: YÖK ATLAS database is used in this project due to access to large data set in thestats package.
 
-1. Explain what the data is about
-Using the "number of choices in 1st to 9th place" and "number of students placed in 1st to 9th choice" data in the YÖK Atlas, an analysis is made regarding the preference of the Industrial Engineering Department of the universities in Ankara and the place in which it is placed in this preference. 
-2. Explain why you made this choice
-• To analyze the demands of universities in Ankara for the Department of Industrial Engineering. 
-• To understand students' interest in the Department of Industrial Engineering among universities across Ankara and their reasons for choosing this department.
-• The order of preference and placement in the Industrial Engineering Department of universities in Ankara shows the trends in interest in this profession over time.
-3. Outline your objectives
-• To compare the demands for Industrial Engineering programs of different universities in Ankara and the success of placement in these programs.
-• Evaluating the competition between universities
-• To examine the differences between Industrial Engineering programs of different universities in Ankara
-• To analyze the comparison of education quality according to the order of preference of the Industrial Engineering Department of universities in Ankara.
-4. Discuss what you aim to accomplish
-The aim of this project,
-• To analyze the rank in which the Department of Industrial Engineering is preferred among universities in Ankara and the placement rates for this choice.
-• Understanding the relationship between student preferences and success.
-• Evaluating the competition between universities. 
-• Based on their placement success and preference rankings, it aims to make an analysis to guide future students on which university can provide more advantages in choosing the Industrial Engineering program.
+1.  Explain what the data is about Using the "number of choices in 1st to 9th place" and "number of students placed in 1st to 9th choice" data in the YÖK Atlas, an analysis is made regarding the preference of the Industrial Engineering Department of the universities in Ankara and the place in which it is placed in this preference.
+2.  Explain why you made this choice • To analyze the demands of universities in Ankara for the Department of Industrial Engineering. • To understand students' interest in the Department of Industrial Engineering among universities across Ankara and their reasons for choosing this department. • The order of preference and placement in the Industrial Engineering Department of universities in Ankara shows the trends in interest in this profession over time.
+3.  Outline your objectives • To compare the demands for Industrial Engineering programs of different universities in Ankara and the success of placement in these programs. • Evaluating the competition between universities • To examine the differences between Industrial Engineering programs of different universities in Ankara • To analyze the comparison of education quality according to the order of preference of the Industrial Engineering Department of universities in Ankara.
+4.  Discuss what you aim to accomplish The aim of this project, • To analyze the rank in which the Department of Industrial Engineering is preferred among universities in Ankara and the placement rates for this choice. • Understanding the relationship between student preferences and success. • Evaluating the competition between universities. • Based on their placement success and preference rankings, it aims to make an analysis to guide future students on which university can provide more advantages in choosing the Industrial Engineering program.
 
 In this project, number of choices of Industrial Engineering departments of universities in Ankara and the number of students placed in order of choice between 2018-2020 are provided.
 
-In our dataset, we use industrial engineering data. Therefore, in the "Faculty" column, we have "Engineering Faculty," and in the "Department" section, we specifically denote "Industrial Engineering." The university branch is designated as Ankara-based universities in the dataset.
-The columns from 8 to 16 provide information on how many times the Industrial Engineering department at that university was chosen as the 1st, 2nd, 3rd, and so on, up to the 9th preference.
-The columns from 17 to 25 give the number of students placed in order of choice.
+In our dataset, we use industrial engineering data. Therefore, in the "Faculty" column, we have "Engineering Faculty," and in the "Department" section, we specifically denote "Industrial Engineering." The university branch is designated as Ankara-based universities in the dataset. The columns from 8 to 16 provide information on how many times the Industrial Engineering department at that university was chosen as the 1st, 2nd, 3rd, and so on, up to the 9th preference. The columns from 17 to 25 give the number of students placed in order of choice.
 
 Through this data set, we will be able to determine which university's Industrial Engineering department is more preferred, and in conjunction with this parameter, we can understand which university is more favorable for students. Building upon these preferences, analyses can be conducted on the educational quality, student quality, and social facilities of the universities. Additionally, based on the placement preferences of admitted students, an analysis can be performed to understand the students' preferences for a particular university and assess their level of interest.
 
@@ -44,8 +29,9 @@ You can reach our data through this link : [Our data](https://github.com/emu-hac
 
 -   Data has been recorded.
 
-
 ```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
 
 library(dplyr)
 library(thestats)
