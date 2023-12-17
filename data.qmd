@@ -2,4 +2,34 @@
 title: "Data"
 ---
 
-Data source: xxx
+You can reach our data through this link : [Our data](https://github.com/emu-hacettepe-analytics/emu430-fall2023-team-emutrend_explorers/blob/master/ourdata.rda)
+
+-   Placement rates of candidates applying to Industrial Engineering departments of universities in Ankara in their preference lists. A data filtering study was carried out to see these rates.
+
+-   The woodworking industrial engineering department included in the data has been removed from the data.
+
+-   Data existing NA data omitted.
+
+-   The names of the columns containing data have been changed and have been made more descriptive.
+
+-   Data has been recorded.
+
+
+```{r}
+library(thestats)
+
+data <- list_score(region_names = "all", city_names = "Ankara",
+                   university_names = "all", department_names= "Industrial Engineering",
+                   lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", 
+                                          "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159"))
+our_data <- subset(data, department != "Woodworking Industrial Engineering")
+
+our_data <-na.omit(our_data)
+
+colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","Number of choices in 1st place","Number of choices in 2nd place",
+                        "Number of choices in 3rd place","Number of choices in 4th place","Number of choices in 5th place","Number of choices in 6th place",
+                        "Number of choices in 7th place","Number of choices in 8th place","Number of choices in 9th place",
+                        "Number of students placed in 1st choice", "Number of students placed in 2nd choice", "Number of students placed in 3rd choice",
+                        "Number of students placed in 4th choice","Number of students placed in 5th choice","Number of students placed in 6th choice",
+                        "Number of students placed in 7th choice","Number of students placed in 8th choice","Number of students placed in 9th choice")
+```
