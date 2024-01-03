@@ -113,35 +113,37 @@ You can reach our cleaned data through this link : [Our data](https://github.com
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
-
-library(thestats) 
+library(thestats)
+library(ggplot2)
 library(tidyverse)
+library(gridExtra)
 
-data <- list_score(region_names = "all", city_names = "Ankara", university_names = "all", department_names = "Industrial Engineering", lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159")) 
+data <- list_score(region_names = "all", city_names = "Ankara",
+                   university_names = "all", department_names= "Industrial Engineering",
+                   lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", 
+                                        "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159"))
 
 our_data <- subset(data, department != "Woodworking Industrial Engineering")
 
 our_data <-na.omit(our_data)
 
-colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd", "choice_3rd","choice_4th","choice_5th","choice_6th", "choice_7th","choice_8th","choice_9th", "placed_1st", "placed_2nd", "placed_3rd", "placed_4th","placed_5th","placed_6th", "placed_7th","placed_8th","placed_9th")
+colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd",
+                        "choice_3rd","choice_4th","choice_5th","choice_6th",
+                        "choice_7th","choice_8th","choice_9th",
+                        "placed_1st", "placed_2nd", "placed_3rd",
+                        "placed_4th","placed_5th","placed_6th",
+                        "placed_7th","placed_8th","placed_9th")
 
-library(thestats) library(ggplot2) library(tidyverse)
+print(head(our_data))
 
-data <- list_score(region_names = "all", city_names = "Ankara", university_names = "all", department_names= "Industrial Engineering", lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159")) 
-
-our_data <- subset(data, department != "Woodworking Industrial Engineering")
-
-our_data <- na.omit(our_data)
-
-colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd", "choice_3rd","choice_4th","choice_5th","choice_6th", "choice_7th","choice_8th","choice_9th", "placed_1st", "placed_2nd", "placed_3rd", "placed_4th","placed_5th","placed_6th", "placed_7th","placed_8th","placed_9th")
 ```
 
 # EDA Analysis
 
 In this project, number of choices of Industrial Engineering departments of universities in Ankara and the number of students placed in order of choice between 2018-2020 are provided.
 
-In our dataset, we use industrial engineering data. Therefore, in the \"Faculty\" column, we have \"Engineering Faculty,\" and in the \"Department\" section, we specifically denote \"Industrial Engineering.\" The university branch is designated as Ankara-based universities in the dataset. The columns from 8 to 16 provide information on how many times the Industrial Engineering department at that university was chosen as the 1st, 2nd, 3rd, and so on, up to the 9th preference. The columns from 17 to 25 give the number of students placed in order of choice.
+In our dataset, we use industrial engineering data. Therefore, in the "Faculty" column, we have "Engineering Faculty," and in the "Department" section, we specifically denote "Industrial Engineering." The university branch is designated as Ankara-based universities in the dataset. The columns from 8 to 16 provide information on how many times the Industrial Engineering department at that university was chosen as the 1st, 2nd, 3rd, and so on, up to the 9th preference. The columns from 17 to 25 give the number of students placed in order of choice.
 
-Through this data set, we will be able to determine which university\'s Industrial Engineering department is more preferred, and in conjunction with this parameter, we can understand which university is more favorable for students. Building upon these preferences, analyses can be conducted on the educational quality, student quality, and social facilities of the universities. Additionally, based on the placement preferences of admitted students, an analysis can be performed to understand the students\' preferences for a particular university and assess their level of interest.
+Through this data set, we will be able to determine which university's Industrial Engineering department is more preferred, and in conjunction with this parameter, we can understand which university is more favorable for students. Building upon these preferences, analyses can be conducted on the educational quality, student quality, and social facilities of the universities. Additionally, based on the placement preferences of admitted students, an analysis can be performed to understand the students' preferences for a particular university and assess their level of interest.
 
 In conclusion, this data set fundamentally provides access to a wide range of analytics, allowing a thorough assessment of universities based on the preferences of students majoring in Industrial Engineering. This makes it easier for us to comprehend the educational environment more deeply and to make judgments.
