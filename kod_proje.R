@@ -2,16 +2,23 @@ library(thestats)
 library(ggplot2)
 library(tidyverse)
 library(gridExtra)
-trace(list_score, edit=T)
+
 
 data <- list_score(region_names = "all", city_names = "Ankara",
                    university_names = "all", department_names= "Industrial Engineering",
                    lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", 
                                         "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159"))
+selected_university  <- c("Industrial Engineering (English) (Scholarship)","Industrial Engineering (English)","Industrial Engineering(English)",
+"Industrial Engineering (English) (Scholarship)","	
+Industrial Engineering(English)(Scholarship)","Industrial Engineering (Scholarship)","	
+Industrial Engineering (English) (Scholarship)","Industrial Engineering(English)(Scholarship)","Industrial Engineering (English) (Scholarship)",
+"Industrial Engineering(English)(Scholarship)","Industrial Engineering (English)","Industrial Engineering(English)","Industrial Engineering (Scholarship)",
+"Industrial Engineering (Scholarship)","Industrial Engineering (English) (Scholarship)","Industrial Engineering (English) (Scholarship)")
 
-our_data <- subset(data, department != "Woodworking Industrial Engineering")
 
-our_data <-na.omit(our_data)
+
+
+our_data <-na.omit(data)
 
 colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd",
                         "choice_3rd","choice_4th","choice_5th","choice_6th",
@@ -19,6 +26,8 @@ colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty
                         "placed_1st", "placed_2nd", "placed_3rd",
                         "placed_4th","placed_5th","placed_6th",
                         "placed_7th","placed_8th","placed_9th")
+
+our_data <- our_data %>% filter (Department %in% selected_university)
 
 save(our_data, file = "ourdata.rda")
 
@@ -61,9 +70,9 @@ plot_3 <- ggplot(na.omit(placment_rate_data), aes(x = as.factor(Year), y = place
   theme(axis.title = element_text(color = "green"))+
   facet_wrap(.~ University)
 
+# Look at only Hacettepe University data
 
-
-# hacettepe data 1
+# Hacettepe University Industrial Engineering data in 2018
 
 hacettepe_data1 <- our_data %>% filter(University == "Hacettepe University",Year == 2018)
 
@@ -79,10 +88,12 @@ plot_4 <- ggplot(df_long1, aes(x= Choice, y = Value))+
   theme(axis.title = element_text(color = "purple"))+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
-# hacettepe data 2
+
+
+# Hacettepe University Industrial Engineering data in 2019
 hacettepe_data2 <- our_data %>% filter(University == "Hacettepe University",Year == 2019)
 
-# Pivot the data to a long format
+
 df_long2 <- pivot_longer(hacettepe_data2, cols = starts_with("choice"),
                         names_to = "Choice", values_to = "Value")
 
@@ -94,7 +105,9 @@ plot_5 <- ggplot(df_long2, aes(x= Choice, y = Value))+
   theme(axis.title = element_text(color = "blue"))+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
-# hacettepe data 3
+
+# Hacettepe University Industrial Engineering data in 2020
+
 hacettepe_data3 <- our_data %>% filter(University == "Hacettepe University",Year == 2020)
 
 
@@ -111,3 +124,10 @@ plot_6 <- ggplot(df_long3, aes(x= Choice, y = Value)) +
 
 
 grid.arrange (plot_4, plot_5, plot_6, ncol = 3)
+
+
+# Average of number of first choices in all years
+
+avg_first_choices <- our_data %>% group_by(Type, University) %>% 
+  summarize(avg_1st_choices = mean(choice_1st)) %>%
+  arrange(desc(avg_1st_choices))
