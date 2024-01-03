@@ -2,55 +2,146 @@
 title: "Data"
 ---
 
-Data: YÖK ATLAS database is used in this project due to access to large data set in thestats package.
+# Data
 
-1.  Explain what the data is about Using the "number of choices in 1st to 9th place" and "number of students placed in 1st to 9th choice" data in the YÖK Atlas, an analysis is made regarding the preference of the Industrial Engineering Department of the universities in Ankara and the place in which it is placed in this preference.
-2.  Explain why you made this choice • To analyze the demands of universities in Ankara for the Department of Industrial Engineering. • To understand students' interest in the Department of Industrial Engineering among universities across Ankara and their reasons for choosing this department. • The order of preference and placement in the Industrial Engineering Department of universities in Ankara shows the trends in interest in this profession over time.
-3.  Outline your objectives • To compare the demands for Industrial Engineering programs of different universities in Ankara and the success of placement in these programs. • Evaluating the competition between universities • To examine the differences between Industrial Engineering programs of different universities in Ankara • To analyze the comparison of education quality according to the order of preference of the Industrial Engineering Department of universities in Ankara.
-4.  Discuss what you aim to accomplish The aim of this project, • To analyze the rank in which the Department of Industrial Engineering is preferred among universities in Ankara and the placement rates for this choice. • Understanding the relationship between student preferences and success. • Evaluating the competition between universities. • Based on their placement success and preference rankings, it aims to make an analysis to guide future students on which university can provide more advantages in choosing the Industrial Engineering program.
+## Data Source
 
-In this project, number of choices of Industrial Engineering departments of universities in Ankara and the number of students placed in order of choice between 2018-2020 are provided.
+-   YÖK ATLAS database, accessed through the "thestats" package in R.
 
-In our dataset, we use industrial engineering data. Therefore, in the "Faculty" column, we have "Engineering Faculty," and in the "Department" section, we specifically denote "Industrial Engineering." The university column is designated as Ankara-based universities in the dataset. The columns from 8 to 16 provide information on how many times the Industrial Engineering department at that university was chosen as the 1st, 2nd, 3rd, and so on, up to the 9th preference. The columns from 17 to 25 give the number of students placed in order of choice.
+-   Focuses on Industrial Engineering departments at universities in Ankara.
 
-Through this data set, we will be able to determine which university's Industrial Engineering department is more preferred, and in conjunction with this parameter, we can understand which university is more favorable for students. Building upon these preferences, analyses can be conducted on the educational quality, student quality, and social facilities of the universities. Additionally, based on the placement preferences of admitted students, an analysis can be performed to understand the students' preferences for a particular university and assess their level of interest.
+-   Includes data on student preferences (1st to 9th choices) and placements (2018-2020).
 
-In conclusion, this data set fundamentally provides access to a wide range of analytics, allowing a thorough assessment of universities based on the preferences of students majoring in Industrial Engineering. This makes it easier for us to comprehend the educational environment more deeply and to make judgments.
+[Click](https://cran.r-project.org/web/packages/thestats/thestats.pdf) for more information about "thestats" package.
 
-You can reach our data through this link : [Our data](https://github.com/emu-hacettepe-analytics/emu430-fall2023-team-emutrend_explorers/blob/master/ourdata.rda)
+## Data Cleaning
 
--   Placement rates of candidates applying to Industrial Engineering departments of universities in Ankara in their preference lists. A data filtering study was carried out to see these rates.
+-   Removed woodworking industrial engineering department from data.
 
--   The woodworking industrial engineering department included in the data has been removed from the data.
+-   Handled missing values (NA).
 
--   Data existing NA data omitted.
+-   Renamed columns for clarity.
 
--   The names of the columns containing data have been changed and have been made more descriptive.
+**A breakdown of the code:**
 
--   Data has been recorded.
+**1. Loading Libraries:**
+
+-   `library(tidyverse)`: Loads the `tidyverse`package for efficient data manipulation.
+
+-   `library(thestats)`: Loads the `thestats` package to access the YÖK ATLAS database.
+
+**2. Loading Data:**
+
+-   `data <- list_score(...)`: Retrieves specific data from the YÖK ATLAS database using the `list_score` function:
+
+    -   Filters for Industrial Engineering departments in Ankara.
+
+    -   Selects variables related to student choices and placements.
+
+    -   Employs English language for variable names (`lang = "en"`).
+
+**3. Filtering Data:**
+
+-   `our_data <- subset(data, department != "Woodworking Industrial Engineering")`: Excludes the "Woodworking Industrial Engineering" department from the dataset.
+
+**4. Handling Missing Values:**
+
+-   `our_data <- na.omit(our_data)`: Removes any rows with missing values (NA).
+
+**5. Renaming Columns:**
+
+-   `colnames(our_data) <- c(...)`: Assigns more descriptive names to the columns for clarity.
+
+*Now we have a clean dataset called `our_data` ready for further analysis to explore our project's objectives*
+
+You can reach our cleaned data through this link : [Our data](https://github.com/emu-hacettepe-analytics/emu430-fall2023-team-emutrend_explorers/blob/master/ourdata.rda)
+
+## Project Objectives
+
+#### Analyze demand and placement trends:
+
+-   Compare demand for Industrial Engineering programs across universities.
+
+-   Assess placement success rates in these programs.
+
+-   Identify trends in student interest over time.
+
+#### Evaluate competition and differences:
+
+-   Analyze competition between universities for Industrial Engineering students.
+
+-   Examine differences between programs at different universities.
+
+-   Analyze education quality: Compare perceived quality of education based on student preferences.
+
+#### Guide student choices:
+
+-   Help future students make informed decisions about which university to choose for Industrial Engineering, considering others' placement success and preferences.
+
+### Key Data Elements
+
+1.  ID's of each university
+
+2.  Year
+
+3.  Type of university based on State or Private
+
+4.  Program Code
+
+5.  Faculty (Engineering Faculty)
+
+6.  Department (Industrial Engineering)
+
+7.  University Branch (Ankara-based universities)
+
+8.  Columns 8-16: Number of times chosen as 1st, 2nd, ..., 9th preference
+
+9.  Columns 17-25: Number of students placed in order of choice
+
+## Project Potential
+
+-   Insight into student preferences and university competition for Industrial Engineering.
+
+-   Understanding of factors influencing student choices and placement success.
+
+-   Guidance for future students in selecting universities in Industrial Engineering programs in Ankara.
+
+-   Potential for further analysis on educational quality, student quality, and social facilities.
+
+## Final Dataset
 
 ```{r}
-
 #| code-fold: true
 #| code-summary: "Show the code"
 
+library(thestats) 
+library(tidyverse)
 
-library(dplyr)
-library(thestats)
+data <- list_score(region_names = "all", city_names = "Ankara", university_names = "all", department_names = "Industrial Engineering", lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159")) 
 
-data <- list_score(region_names = "all", city_names = "Ankara",
-                   university_names = "all", department_names= "Industrial Engineering",
-                   lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", 
-                                          "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159"))
 our_data <- subset(data, department != "Woodworking Industrial Engineering")
 
 our_data <-na.omit(our_data)
 
-colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","Number of choices in 1st place","Number of choices in 2nd place",
-                        "Number of choices in 3rd place","Number of choices in 4th place","Number of choices in 5th place","Number of choices in 6th place",
-                        "Number of choices in 7th place","Number of choices in 8th place","Number of choices in 9th place",
-                        "Number of students placed in 1st choice", "Number of students placed in 2nd choice", "Number of students placed in 3rd choice",
-                        "Number of students placed in 4th choice","Number of students placed in 5th choice","Number of students placed in 6th choice",
-                        "Number of students placed in 7th choice","Number of students placed in 8th choice","Number of students placed in 9th choice")
+colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd", "choice_3rd","choice_4th","choice_5th","choice_6th", "choice_7th","choice_8th","choice_9th", "placed_1st", "placed_2nd", "placed_3rd", "placed_4th","placed_5th","placed_6th", "placed_7th","placed_8th","placed_9th")
 
+library(thestats) library(ggplot2) library(tidyverse)
+
+data <- list_score(region_names = "all", city_names = "Ankara", university_names = "all", department_names= "Industrial Engineering", lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159")) 
+
+our_data <- subset(data, department != "Woodworking Industrial Engineering")
+
+our_data <- na.omit(our_data)
+
+colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd", "choice_3rd","choice_4th","choice_5th","choice_6th", "choice_7th","choice_8th","choice_9th", "placed_1st", "placed_2nd", "placed_3rd", "placed_4th","placed_5th","placed_6th", "placed_7th","placed_8th","placed_9th")
 ```
+
+# EDA Analysis
+
+In this project, number of choices of Industrial Engineering departments of universities in Ankara and the number of students placed in order of choice between 2018-2020 are provided.
+
+In our dataset, we use industrial engineering data. Therefore, in the \"Faculty\" column, we have \"Engineering Faculty,\" and in the \"Department\" section, we specifically denote \"Industrial Engineering.\" The university branch is designated as Ankara-based universities in the dataset. The columns from 8 to 16 provide information on how many times the Industrial Engineering department at that university was chosen as the 1st, 2nd, 3rd, and so on, up to the 9th preference. The columns from 17 to 25 give the number of students placed in order of choice.
+
+Through this data set, we will be able to determine which university\'s Industrial Engineering department is more preferred, and in conjunction with this parameter, we can understand which university is more favorable for students. Building upon these preferences, analyses can be conducted on the educational quality, student quality, and social facilities of the universities. Additionally, based on the placement preferences of admitted students, an analysis can be performed to understand the students\' preferences for a particular university and assess their level of interest.
+
+In conclusion, this data set fundamentally provides access to a wide range of analytics, allowing a thorough assessment of universities based on the preferences of students majoring in Industrial Engineering. This makes it easier for us to comprehend the educational environment more deeply and to make judgments.
