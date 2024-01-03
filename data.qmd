@@ -16,11 +16,15 @@ title: "Data"
 
 ## Data Cleaning
 
--   Removed woodworking industrial engineering department from data.
+- Woodworking industrial engineering department is removed from our data.
 
--   Handled missing values (NA).
+- Preferences that convey the same meaning but are written differently (i.e., ' (English)' '(English)') are not included.
 
--   Renamed columns for clarity.
+- Preferences of students who did not enter with a full scholarship are not included.
+
+- Missing values are handled (NA).
+
+- Columns are renamed for clarity.
 
 **A breakdown of the code:**
 
@@ -118,14 +122,22 @@ library(ggplot2)
 library(tidyverse)
 library(gridExtra)
 
+
 data <- list_score(region_names = "all", city_names = "Ankara",
                    university_names = "all", department_names= "Industrial Engineering",
                    lang = "en", var_ids=c("X141", "X142", "X143", "X144", "X145", "X146","X147", "X148", "X149", 
                                         "X151", "X152", "X153", "X154", "X155", "X156", "X157", "X158", "X159"))
+selected_university  <- c("Industrial Engineering (English) (Scholarship)","Industrial Engineering (English)","Industrial Engineering(English)",
+"Industrial Engineering (English) (Scholarship)","	
+Industrial Engineering(English)(Scholarship)","Industrial Engineering (Scholarship)","	
+Industrial Engineering (English) (Scholarship)","Industrial Engineering(English)(Scholarship)","Industrial Engineering (English) (Scholarship)",
+"Industrial Engineering(English)(Scholarship)","Industrial Engineering (English)","Industrial Engineering(English)","Industrial Engineering (Scholarship)",
+"Industrial Engineering (Scholarship)","Industrial Engineering (English) (Scholarship)","Industrial Engineering (English) (Scholarship)")
 
-our_data <- subset(data, department != "Woodworking Industrial Engineering")
 
-our_data <-na.omit(our_data)
+
+
+our_data <-na.omit(data)
 
 colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty","Department","choice_1st","choice_2nd",
                         "choice_3rd","choice_4th","choice_5th","choice_6th",
@@ -134,8 +146,8 @@ colnames(our_data) <- c("ID", "Year","Type","Program Code","University","Faculty
                         "placed_4th","placed_5th","placed_6th",
                         "placed_7th","placed_8th","placed_9th")
 
+our_data <- our_data %>% filter (Department %in% selected_university)
 print(head(our_data))
-
 ```
 
 # EDA Analysis
