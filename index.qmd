@@ -9,17 +9,17 @@ Please stay tuned to follow our project activities.
 
 # *Team Members*
 
-1.  [Dilan Su Firat](https://github.com/sufirat)
+1.  [Dilan Su Firat](https://emu-hacettepe-analytics.github.io/emu430-fall2023-sufirat/)
 
-2.  [Zumrut Zeynep Ozsoy](https://github.com/zzeynepo)
+2.  [Zumrut Zeynep Ozsoy](https://emu-hacettepe-analytics.github.io/emu430-fall2023-zzeynepo/)
 
-3.  [Miray Elif Erdemli](https://github.com/MirayElifErdemli)
+3.  [Miray Elif Erdemli](https://emu-hacettepe-analytics.github.io/emu430-fall2023-MirayElifErdemli/)
 
-4.  [Sena Nur Ensici](https://github.com/ensici)
+4.  [Sena Nur Ensici](https://emu-hacettepe-analytics.github.io/emu430-fall2023-ensici/)
 
-5.  [Gulin Unsal](https://github.com/gulinunsal)
+5.  [Gulin Unsal](https://emu-hacettepe-analytics.github.io/emu430-fall2023-gulinunsal/)
 
-6.  [Yasin Duran](https://github.com/Yasinduran2200469822)
+6.  [Yasin Duran](https://emu-hacettepe-analytics.github.io/emu430-fall2023-Yasinduran2200469822/)
 
 # *Project Topic*
 
@@ -29,5 +29,4 @@ Please stay tuned to follow our project activities.
 
 YOK ATLAS database is used in this project due to access to large data set in thestats package.
 
-
-[YOK ATLAS](https://yokatlas.yok.gov.tr/) :refers to a web-based platform provided by the Council of Higher Education in Turkey. YOK ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey. 
+[YOK ATLAS](https://yokatlas.yok.gov.tr/) :refers to a web-based platform provided by the Council of Higher Education in Turkey. YOK ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey.

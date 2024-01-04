@@ -56,6 +56,7 @@ print(plot_1)
 
 ```
 
+
 Among the universities in Ankara, we thought that ODTÜ, Hacettepe, and Bilkent University were most frequently chosen as the first preference, and we have confirmed this by processing our data. 
 
 We can say that the first-choice selection for private universities such as Ankara Bilim, Atılım, Çankaya, and Ostim Technical University has increased over the years.We believe that this situation is created by incentives provided by universities, such as internships, to their students. 
@@ -72,6 +73,7 @@ avg_first_choices <- our_data %>% group_by(University) %>%
   arrange(desc(avg_1st_choices))
 print(avg_first_choices)
 ```
+
 
 Here, when the averages of the choices for ODTÜ, Hacettepe, and Bilkent are taken, we can comment that these universities are the most preferred ones. Considering the rankings, we believe this table is consistent.
 
@@ -97,7 +99,6 @@ Here, we observe that none of the private universities showing an increase in th
 
 In 2019, the placement situation for those who put these universities as their first choice in Bilkent and ODTÜ was higher than Hacettepe, while in 2020, we observe a decrease in these numbers. This explains the increase in the number of students placed in Hacettepe in 2020. We think that the students here shifted to Hacettepe.
 
-
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -118,6 +119,7 @@ plot_3 <- ggplot(na.omit(placment_rate_data), aes(x = as.factor(Year), y = place
 print(plot_3)
 
 ```
+
 
 This graph observes the "writing as the first choice/placement" ratio.
 Higher-scored universities followed a more consistent path in the preference stage.
@@ -181,4 +183,7 @@ plot_6 <- ggplot(df_long3, aes(x= Choice, y = Value)) +
 print(grid.arrange (plot_4, plot_5, plot_6, ncol = 3))
 
 ```
+
 This graph shows in which ranking Hacettepe was chosen within 3 years. We can say that this graph supports our other graphs. We see that the highest value is in the 3rd preference column. Similarly, we observe that the first-choice selection situation increases over the years.
+
+
