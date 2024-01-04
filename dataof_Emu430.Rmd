@@ -1,4 +1,12 @@
 ---
+title: "EmuTrend_Explorers"
+output:
+  word_document: default
+  html_document: default
+date: "2024-01-04"
+---
+
+---
 title: "Data"
 ---
 
@@ -159,3 +167,5 @@ In our dataset, we use industrial engineering data. Therefore, in the "Faculty" 
 Through this data set, we will be able to determine which university's Industrial Engineering department is more preferred, and in conjunction with this parameter, we can understand which university is more favorable for students. Building upon these preferences, analyses can be conducted on the educational quality, student quality, and social facilities of the universities. Additionally, based on the placement preferences of admitted students, an analysis can be performed to understand the students' preferences for a particular university and assess their level of interest.
 
 In conclusion, this data set fundamentally provides access to a wide range of analytics, allowing a thorough assessment of universities based on the preferences of students majoring in Industrial Engineering. This makes it easier for us to comprehend the educational environment more deeply and to make judgments.
+
+

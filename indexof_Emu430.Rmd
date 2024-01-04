@@ -1,0 +1,40 @@
+---
+title: "EmuTrend_Explorers"
+output:
+  word_document: default
+  html_document: default
+date: "2024-01-04"
+---
+
+---
+title: "Team EMUTrend Explorers"
+sidebar: false 
+---
+
+This is our project webpage.
+
+Please stay tuned to follow our project activities.
+
+# *Team Members*
+
+1.  [Dilan Su Firat](https://emu-hacettepe-analytics.github.io/emu430-fall2023-sufirat/)
+
+2.  [Zumrut Zeynep Ozsoy](https://emu-hacettepe-analytics.github.io/emu430-fall2023-zzeynepo/)
+
+3.  [Miray Elif Erdemli](https://emu-hacettepe-analytics.github.io/emu430-fall2023-MirayElifErdemli/)
+
+4.  [Sena Nur Ensici](https://emu-hacettepe-analytics.github.io/emu430-fall2023-ensici/)
+
+5.  [Gulin Unsal](https://emu-hacettepe-analytics.github.io/emu430-fall2023-gulinunsal/)
+
+6.  [Yasin Duran](https://emu-hacettepe-analytics.github.io/emu430-fall2023-Yasinduran2200469822/)
+
+# *Project Topic*
+
+**Data-Driven Insights into Student Preferences***:* A Case Study on Industrial Engineering Departments in Ankara using the YOK ATLAS dataset
+
+# *Data Set*
+
+YOK ATLAS database is used in this project due to access to large data set in thestats package.
+
+[YOK ATLAS](https://yokatlas.yok.gov.tr/) :refers to a web-based platform provided by the Council of Higher Education in Turkey. YOK ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey.
