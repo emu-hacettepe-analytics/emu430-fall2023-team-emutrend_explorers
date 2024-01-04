@@ -2,7 +2,11 @@
 title: "Analysis"
 ---
 
-About this site
+We examined the data obtained from the Higher Education Council (YÖK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs  depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students' first-choice placements.
+
+Continuing our analysis, we scrutinized the ratio of successful placements for students who selected their first choice, assessing the consistency of the results. Finally, we conducted an investigation into the frequency of Hacettepe University being chosen as a preference.
+
+Our comprehensive examination aimed to provide insights into the trends and outcomes of university preferences and first-choice placements among students. The findings shed light on the overall dynamics of university selection in Ankara over the specified years.
 
 ```{r}
 #| echo: false
