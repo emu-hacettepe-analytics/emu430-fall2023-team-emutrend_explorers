@@ -142,7 +142,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" id="toc-plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" class="nav-link active" data-scroll-target="#plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students">PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students</a></li>
+  <li><a href="#table-average-of-students-first-choices-based-on-universities" id="toc-table-average-of-students-first-choices-based-on-universities" class="nav-link" data-scroll-target="#table-average-of-students-first-choices-based-on-universities">TABLE : Average of Students’ First Choices Based On Universities</a></li>
+  <li><a href="#plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students" id="toc-plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students" class="nav-link" data-scroll-target="#plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students">PLOT 2 : The statistics of universities located in Ankara in terms of being the placed in first choice for students</a></li>
+  <li><a href="#plot-3-placement-rate-for-students-first-choices" id="toc-plot-3-placement-rate-for-students-first-choices" class="nav-link" data-scroll-target="#plot-3-placement-rate-for-students-first-choices">PLOT 3 : Placement Rate for Students’ First Choices</a></li>
+  <li><a href="#plot-4-based-on-only-hacettepe-university-industrial-engineering-data" id="toc-plot-4-based-on-only-hacettepe-university-industrial-engineering-data" class="nav-link" data-scroll-target="#plot-4-based-on-only-hacettepe-university-industrial-engineering-data">PLOT 4 : Based on only Hacettepe University Industrial Engineering data</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -168,10 +178,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>We examined the data obtained from the Higher Education Council (YÖK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students’ first-choice placements.</p>
+<p>We examined the data obtained from the Higher Education Council (YOK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students’ first-choice placements.</p>
 <p>Continuing our analysis, we scrutinized the ratio of successful placements for students who selected their first choice, assessing the consistency of the results. Finally, we conducted an investigation into the frequency of Hacettepe University being chosen as a preference.</p>
 <p>Our comprehensive examination aimed to provide insights into the trends and outcomes of university preferences and first-choice placements among students. The findings shed light on the overall dynamics of university selection in Ankara over the specified years.</p>
 <div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'thestats' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyverse' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.3.2</code></pre>
+</div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -181,43 +209,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'gridExtra' was built under R version 4.3.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
 Attaching package: 'gridExtra'
-
 
 The following object is masked from 'package:dplyr':
 
     combine</code></pre>
 </div>
 </div>
+<section id="plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" class="level1">
+<h1>PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students</h1>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The statistics of universities located in Ankara in terms of being the first choice for  students</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plot_1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(our_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> choice_1st)) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"pink"</span>)<span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,<span class="at">y =</span> <span class="st">"The Number of choices in 1st place"</span>)<span class="sc">+</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"The statistics of universities located in Ankara in terms of being the first choice for students"</span>) <span class="sc">+</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"purple"</span>))<span class="sc">+</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span> University)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The statistics of universities located in Ankara in terms of being the first choice for  students</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plot_1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(our_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> choice_1st)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"pink"</span>)<span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,<span class="at">y =</span> <span class="st">"The Number of choices in 1st place"</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"The statistics of universities located in Ankara in terms of being the first choice for students"</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"purple"</span>))<span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span> University)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Among the universities in Ankara, we thought that ODTÜ, Hacettepe, and Bilkent University were most frequently chosen as the first preference, and we have confirmed this by processing our data.</p>
-<p>We can say that the first-choice selection for private universities such as Ankara Bilim, Atılım, Çankaya, and Ostim Technical University has increased over the years.We believe that this situation is created by incentives provided by universities, such as internships, to their students.</p>
+</section>
+<section id="table-average-of-students-first-choices-based-on-universities" class="level1">
+<h1>TABLE : Average of Students’ First Choices Based On Universities</h1>
+<p>Among the universities in Ankara, we thought that ODTU, Hacettepe, and Bilkent University were most frequently chosen as the first preference, and we have confirmed this by processing our data.</p>
+<p>We can say that the first-choice selection for private universities such as Ankara Bilim, Atilim, Cankaya, and Ostim Technical University has increased over the years.We believe that this situation is created by incentives provided by universities, such as internships, to their students.</p>
 <p>Additionally, among the State Universities, we observe that only Hacettepe has an increasing trend in being the first choice.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_first_choices <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(University) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_1st_choices =</span> <span class="fu">mean</span>(choice_1st)) <span class="sc">%&gt;%</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_1st_choices))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(avg_first_choices)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>avg_first_choices <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(University) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">avg_1st_choices =</span> <span class="fu">mean</span>(choice_1st)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_1st_choices))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(avg_first_choices)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 2
@@ -237,106 +274,115 @@ The following object is masked from 'package:dplyr':
 12 University of Turkish Aeronautical Association             6.33</code></pre>
 </div>
 </div>
-<p>Here, when the averages of the choices for ODTÜ, Hacettepe, and Bilkent are taken, we can comment that these universities are the most preferred ones. Considering the rankings, we believe this table is consistent.</p>
+<p>Here, when the averages of the choices for ODTU, Hacettepe, and Bilkent are taken, we can comment that these universities are the most preferred ones. Considering the rankings, we believe this table is consistent.</p>
+</section>
+<section id="plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students" class="level1">
+<h1>PLOT 2 : The statistics of universities located in Ankara in terms of being the placed in first choice for students</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The statistics of universities located in Ankara in terms of being the placed in 1st choice for students</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plot_2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(our_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> placed_1st)) <span class="sc">+</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightblue"</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,<span class="at">y =</span> <span class="st">"The Number of students placed in first choice"</span>)<span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"The statistics of universities located in Ankara in terms of being the placed in first choice for students"</span>) <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"blue"</span>))<span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span> University)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The statistics of universities located in Ankara in terms of being the placed in 1st choice for students</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>plot_2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(our_data, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> placed_1st)) <span class="sc">+</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightblue"</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,<span class="at">y =</span> <span class="st">"The Number of students placed in first choice"</span>)<span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"The statistics of universities located in Ankara in terms of being the placed in first choice for students"</span>) <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"blue"</span>))<span class="sc">+</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span> University)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This graph shows those who put the relevant university as their first choice and got placed. Here, we observe that none of the private universities showing an increase in the first graph demonstrated value. This tells us that, despite being selected as the first choice, students could not get placed in these universities.</p>
-<p>In 2019, the placement situation for those who put these universities as their first choice in Bilkent and ODTÜ was higher than Hacettepe, while in 2020, we observe a decrease in these numbers. This explains the increase in the number of students placed in Hacettepe in 2020. We think that the students here shifted to Hacettepe.</p>
+<p>In 2019, the placement situation for those who put these universities as their first choice in Bilkent and ODTC was higher than Hacettepe, while in 2020, we observe a decrease in these numbers. This explains the increase in the number of students placed in Hacettepe in 2020. We think that the students here shifted to Hacettepe.</p>
+</section>
+<section id="plot-3-placement-rate-for-students-first-choices" class="level1">
+<h1>PLOT 3 : Placement Rate for Students’ First Choices</h1>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Placement rate for students' first choices</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>placment_rate_data <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">placement_rate =</span> placed_1st<span class="sc">/</span>choice_1st) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Year, University, placement_rate)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plot_3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(placment_rate_data), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Year), <span class="at">y =</span> placement_rate)) <span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightgreen"</span>) <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,<span class="at">y =</span> <span class="st">"Placement Rate"</span>)<span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Placement rate for students' first choices over year"</span>) <span class="sc">+</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"green"</span>))<span class="sc">+</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span> University)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Placement rate for students' first choices</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>placment_rate_data <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">placement_rate =</span> placed_1st<span class="sc">/</span>choice_1st) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Year, University, placement_rate)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>plot_3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">na.omit</span>(placment_rate_data), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Year), <span class="at">y =</span> placement_rate)) <span class="sc">+</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightgreen"</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>,<span class="at">y =</span> <span class="st">"Placement Rate"</span>)<span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Placement rate for students' first choices over year"</span>) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"green"</span>))<span class="sc">+</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(.<span class="sc">~</span> University)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>This graph observes the “writing as the first choice/placement” ratio. Higher-scored universities followed a more consistent path in the preference stage.</p>
+</section>
+<section id="plot-4-based-on-only-hacettepe-university-industrial-engineering-data" class="level1">
+<h1>PLOT 4 : Based on only Hacettepe University Industrial Engineering data</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacettepe University Industrial Engineering data in 2018</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>hacettepe_data1 <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(University <span class="sc">==</span> <span class="st">"Hacettepe University"</span>,Year <span class="sc">==</span> <span class="dv">2018</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>df_long1 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(hacettepe_data1, <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"choice"</span>),</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">names_to =</span> <span class="st">"Choice"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plot_4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long1, <span class="fu">aes</span>(<span class="at">x=</span> Choice, <span class="at">y =</span> Value))<span class="sc">+</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"pink"</span>)<span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"xnd chocie"</span>,<span class="at">y =</span> <span class="st">"The Number of choices "</span>)<span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2018"</span>) <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"purple"</span>))<span class="sc">+</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">220</span>))</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacettepe University Industrial Engineering data in 2019</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>hacettepe_data2 <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(University <span class="sc">==</span> <span class="st">"Hacettepe University"</span>,Year <span class="sc">==</span> <span class="dv">2019</span>)</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>df_long2 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(hacettepe_data2, <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"choice"</span>),</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                        <span class="at">names_to =</span> <span class="st">"Choice"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>plot_5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long2, <span class="fu">aes</span>(<span class="at">x=</span> Choice, <span class="at">y =</span> Value))<span class="sc">+</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightblue"</span>)<span class="sc">+</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"xnd chocie"</span>,<span class="at">y =</span> <span class="st">"The Number of choices"</span>)<span class="sc">+</span></span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2019"</span>) <span class="sc">+</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"blue"</span>))<span class="sc">+</span></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">220</span>))</span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacettepe University Industrial Engineering data in 2020</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>hacettepe_data3 <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(University <span class="sc">==</span> <span class="st">"Hacettepe University"</span>,Year <span class="sc">==</span> <span class="dv">2020</span>)</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>df_long3 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(hacettepe_data3, <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"choice"</span>),</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>                         <span class="at">names_to =</span> <span class="st">"Choice"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>plot_6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long3, <span class="fu">aes</span>(<span class="at">x=</span> Choice, <span class="at">y =</span> Value)) <span class="sc">+</span> </span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightgreen"</span>)<span class="sc">+</span></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"xnd chocie"</span>,<span class="at">y =</span> <span class="st">"The Number of choices"</span>)<span class="sc">+</span></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2020"</span>) <span class="sc">+</span></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"green"</span>))<span class="sc">+</span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">220</span>))</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">grid.arrange</span> (plot_4, plot_5, plot_6, <span class="at">ncol =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| code-summary: "Show the code"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacettepe University Industrial Engineering data in 2018</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>hacettepe_data1 <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(University <span class="sc">==</span> <span class="st">"Hacettepe University"</span>,Year <span class="sc">==</span> <span class="dv">2018</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>df_long1 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(hacettepe_data1, <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"choice"</span>),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">names_to =</span> <span class="st">"Choice"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plot_4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long1, <span class="fu">aes</span>(<span class="at">x=</span> Choice, <span class="at">y =</span> Value))<span class="sc">+</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"pink"</span>)<span class="sc">+</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"xnd chocie"</span>,<span class="at">y =</span> <span class="st">"The Number of choices "</span>)<span class="sc">+</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2018"</span>) <span class="sc">+</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"purple"</span>))<span class="sc">+</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">220</span>))</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacettepe University Industrial Engineering data in 2019</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>hacettepe_data2 <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(University <span class="sc">==</span> <span class="st">"Hacettepe University"</span>,Year <span class="sc">==</span> <span class="dv">2019</span>)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>df_long2 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(hacettepe_data2, <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"choice"</span>),</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>                        <span class="at">names_to =</span> <span class="st">"Choice"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>plot_5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long2, <span class="fu">aes</span>(<span class="at">x=</span> Choice, <span class="at">y =</span> Value))<span class="sc">+</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>   <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightblue"</span>)<span class="sc">+</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"xnd chocie"</span>,<span class="at">y =</span> <span class="st">"The Number of choices"</span>)<span class="sc">+</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2019"</span>) <span class="sc">+</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"blue"</span>))<span class="sc">+</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">220</span>))</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Hacettepe University Industrial Engineering data in 2020</span></span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>hacettepe_data3 <span class="ot">&lt;-</span> our_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(University <span class="sc">==</span> <span class="st">"Hacettepe University"</span>,Year <span class="sc">==</span> <span class="dv">2020</span>)</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>df_long3 <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(hacettepe_data3, <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"choice"</span>),</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>                         <span class="at">names_to =</span> <span class="st">"Choice"</span>, <span class="at">values_to =</span> <span class="st">"Value"</span>)</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>plot_6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long3, <span class="fu">aes</span>(<span class="at">x=</span> Choice, <span class="at">y =</span> Value)) <span class="sc">+</span> </span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill=</span><span class="st">"lightgreen"</span>)<span class="sc">+</span></span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"xnd chocie"</span>,<span class="at">y =</span> <span class="st">"The Number of choices"</span>)<span class="sc">+</span></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"2020"</span>) <span class="sc">+</span></span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"green"</span>))<span class="sc">+</span></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">hjust =</span> <span class="dv">1</span>))<span class="sc">+</span></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">220</span>))</span>
+<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">grid.arrange</span> (plot_4, plot_5, plot_6, <span class="at">ncol =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="analysis_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -351,6 +397,7 @@ The following object is masked from 'package:dplyr':
 <p>This graph shows in which ranking Hacettepe was chosen within 3 years. We can say that this graph supports our other graphs. We see that the highest value is in the 3rd preference column. Similarly, we observe that the first-choice selection situation increases over the years.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

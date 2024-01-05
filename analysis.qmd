@@ -2,7 +2,7 @@
 title: "Analysis"
 ---
 
-We examined the data obtained from the Higher Education Council (YÖK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs  depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students' first-choice placements.
+We examined the data obtained from the Higher Education Council (YOK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs  depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students' first-choice placements.
 
 Continuing our analysis, we scrutinized the ratio of successful placements for students who selected their first choice, assessing the consistency of the results. Finally, we conducted an investigation into the frequency of Hacettepe University being chosen as a preference.
 
@@ -44,6 +44,8 @@ our_data <- our_data %>% filter (Department %in% selected_university)
 
 ```
 
+# PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Show the code"
@@ -60,10 +62,10 @@ print(plot_1)
 
 ```
 
+# TABLE : Average of  Students' First Choices Based On Universities
+Among the universities in Ankara, we thought that ODTU, Hacettepe, and Bilkent University were most frequently chosen as the first preference, and we have confirmed this by processing our data. 
 
-Among the universities in Ankara, we thought that ODTÜ, Hacettepe, and Bilkent University were most frequently chosen as the first preference, and we have confirmed this by processing our data. 
-
-We can say that the first-choice selection for private universities such as Ankara Bilim, Atılım, Çankaya, and Ostim Technical University has increased over the years.We believe that this situation is created by incentives provided by universities, such as internships, to their students. 
+We can say that the first-choice selection for private universities such as Ankara Bilim, Atilim, Cankaya, and Ostim Technical University has increased over the years.We believe that this situation is created by incentives provided by universities, such as internships, to their students. 
 
 Additionally, among the State Universities, we observe that only Hacettepe has an increasing trend in being the first choice.
 
@@ -79,7 +81,10 @@ print(avg_first_choices)
 ```
 
 
-Here, when the averages of the choices for ODTÜ, Hacettepe, and Bilkent are taken, we can comment that these universities are the most preferred ones. Considering the rankings, we believe this table is consistent.
+Here, when the averages of the choices for ODTU, Hacettepe, and Bilkent are taken, we can comment that these universities are the most preferred ones. Considering the rankings, we believe this table is consistent.
+
+
+# PLOT 2 : The statistics of universities located in Ankara in terms of being the placed in first choice for students
 
 ```{r}
 
@@ -101,7 +106,10 @@ print(plot_2)
 This graph shows those who put the relevant university as their first choice and got placed.
 Here, we observe that none of the private universities showing an increase in the first graph demonstrated value. This tells us that, despite being selected as the first choice, students could not get placed in these universities. 
 
-In 2019, the placement situation for those who put these universities as their first choice in Bilkent and ODTÜ was higher than Hacettepe, while in 2020, we observe a decrease in these numbers. This explains the increase in the number of students placed in Hacettepe in 2020. We think that the students here shifted to Hacettepe.
+In 2019, the placement situation for those who put these universities as their first choice in Bilkent and ODTC was higher than Hacettepe, while in 2020, we observe a decrease in these numbers. This explains the increase in the number of students placed in Hacettepe in 2020. We think that the students here shifted to Hacettepe.
+
+
+# PLOT 3 : Placement Rate for Students' First Choices
 
 ```{r}
 #| code-fold: true
@@ -127,6 +135,8 @@ print(plot_3)
 
 This graph observes the "writing as the first choice/placement" ratio.
 Higher-scored universities followed a more consistent path in the preference stage.
+
+# PLOT 4 : Based on only Hacettepe University Industrial Engineering data
 
 ```{r}
 
