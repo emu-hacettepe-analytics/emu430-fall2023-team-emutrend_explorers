@@ -14,9 +14,8 @@ During the analysis phase, the project explores the number of choices and placem
 Key findings include the dataset's potential for future analyses, deeper insights into the educational environment, and the project's ability to guide prospective students in making informed decisions. The cleaned dataset lays the foundation for a thorough assessment of universities based on student preferences, facilitating a better understanding of university preferences and potential areas for improvement.
 
 
-```{r}
 
-#| ```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE}
 #| echo: false
 suppressPackageStartupMessages(library(dplyr))
 library(thestats)
@@ -52,7 +51,8 @@ our_data <- our_data %>% filter (Department %in% selected_university)
 
 ```
 
-# PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students
+# PLOT 1 
+## The statistics of universities located in Ankara in terms of being the first choice for students
 
 ```{r}
 #| code-fold: true
