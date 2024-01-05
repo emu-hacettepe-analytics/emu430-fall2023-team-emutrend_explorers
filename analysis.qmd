@@ -2,11 +2,17 @@
 title: "Analysis"
 ---
 
-We examined the data obtained from the Higher Education Council (YOK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs  depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students' first-choice placements.
 
-Continuing our analysis, we scrutinized the ratio of successful placements for students who selected their first choice, assessing the consistency of the results. Finally, we conducted an investigation into the frequency of Hacettepe University being chosen as a preference.
+# *Key Takeaways*
 
-Our comprehensive examination aimed to provide insights into the trends and outcomes of university preferences and first-choice placements among students. The findings shed light on the overall dynamics of university selection in Ankara over the specified years.
+This project aims to analyze the demand and placement trends for Industrial Engineering departments at universities in Ankara. The data, obtained through the "thestats" package from the YOK ATLAS database, has been cleaned to create a dataset focusing solely on preferences and placements related to Industrial Engineering. Data cleaning steps involve excluding unrelated departments, standardizing similar preferences, including only choices of students with full scholarships, and handling missing values.
+
+Among the main objectives of the project are to evaluate competition between universities, analyze the educational quality based on student preferences, and provide guidance for future students in selecting Industrial Engineering programs. The dataset includes key information such as university IDs, years, types (State or Private), program codes, faculties (Engineering), departments (Industrial Engineering), and detailed data on student choices and placements.
+
+During the analysis phase, the project explores the number of choices and placements for Industrial Engineering departments in Ankara between 2018 and 2020. Detailed visualizations focus on Hacettepe University's Industrial Engineering choices in 2018, 2019, and 2020, revealing trends in student preferences over the years and providing valuable insights into the university's attractiveness.
+
+Key findings include the dataset's potential for future analyses, deeper insights into the educational environment, and the project's ability to guide prospective students in making informed decisions. The cleaned dataset lays the foundation for a thorough assessment of universities based on student preferences, facilitating a better understanding of university preferences and potential areas for improvement.
+
 
 ```{r}
 #| echo: false

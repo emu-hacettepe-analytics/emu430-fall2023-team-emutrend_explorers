@@ -146,7 +146,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" id="toc-plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" class="nav-link active" data-scroll-target="#plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students">PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link active" data-scroll-target="#key-takeaways"><em>Key Takeaways</em></a></li>
+  <li><a href="#plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" id="toc-plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" class="nav-link" data-scroll-target="#plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students">PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students</a></li>
   <li><a href="#table-average-of-students-first-choices-based-on-universities" id="toc-table-average-of-students-first-choices-based-on-universities" class="nav-link" data-scroll-target="#table-average-of-students-first-choices-based-on-universities">TABLE : Average of Students’ First Choices Based On Universities</a></li>
   <li><a href="#plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students" id="toc-plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students" class="nav-link" data-scroll-target="#plot-2-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-placed-in-first-choice-for-students">PLOT 2 : The statistics of universities located in Ankara in terms of being the placed in first choice for students</a></li>
   <li><a href="#plot-3-placement-rate-for-students-first-choices" id="toc-plot-3-placement-rate-for-students-first-choices" class="nav-link" data-scroll-target="#plot-3-placement-rate-for-students-first-choices">PLOT 3 : Placement Rate for Students’ First Choices</a></li>
@@ -178,9 +179,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>We examined the data obtained from the Higher Education Council (YOK) as part of our project, focusing on universities in Ankara. Analyzing the data for the years 2018, 2019, and 2020, we created bar graphs depicting the preferences of students for various universities. Subsequently, our study delved into the outcomes of students’ first-choice placements.</p>
-<p>Continuing our analysis, we scrutinized the ratio of successful placements for students who selected their first choice, assessing the consistency of the results. Finally, we conducted an investigation into the frequency of Hacettepe University being chosen as a preference.</p>
-<p>Our comprehensive examination aimed to provide insights into the trends and outcomes of university preferences and first-choice placements among students. The findings shed light on the overall dynamics of university selection in Ankara over the specified years.</p>
+<section id="key-takeaways" class="level1">
+<h1><em>Key Takeaways</em></h1>
+<p>This project aims to analyze the demand and placement trends for Industrial Engineering departments at universities in Ankara. The data, obtained through the “thestats” package from the YOK ATLAS database, has been cleaned to create a dataset focusing solely on preferences and placements related to Industrial Engineering. Data cleaning steps involve excluding unrelated departments, standardizing similar preferences, including only choices of students with full scholarships, and handling missing values.</p>
+<p>Among the main objectives of the project are to evaluate competition between universities, analyze the educational quality based on student preferences, and provide guidance for future students in selecting Industrial Engineering programs. The dataset includes key information such as university IDs, years, types (State or Private), program codes, faculties (Engineering), departments (Industrial Engineering), and detailed data on student choices and placements.</p>
+<p>During the analysis phase, the project explores the number of choices and placements for Industrial Engineering departments in Ankara between 2018 and 2020. Detailed visualizations focus on Hacettepe University’s Industrial Engineering choices in 2018, 2019, and 2020, revealing trends in student preferences over the years and providing valuable insights into the university’s attractiveness.</p>
+<p>Key findings include the dataset’s potential for future analyses, deeper insights into the educational environment, and the project’s ability to guide prospective students in making informed decisions. The cleaned dataset lays the foundation for a thorough assessment of universities based on student preferences, facilitating a better understanding of university preferences and potential areas for improvement.</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: package 'dplyr' was built under R version 4.3.2</code></pre>
@@ -223,6 +227,7 @@ The following object is masked from 'package:dplyr':
     combine</code></pre>
 </div>
 </div>
+</section>
 <section id="plot-1-the-statistics-of-universities-located-in-ankara-in-terms-of-being-the-first-choice-for-students" class="level1">
 <h1>PLOT 1 : The statistics of universities located in Ankara in terms of being the first choice for students</h1>
 <div class="cell">
