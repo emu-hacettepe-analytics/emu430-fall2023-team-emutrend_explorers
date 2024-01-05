@@ -30,3 +30,13 @@ Please stay tuned to follow our project activities.
 YOK ATLAS database is used in this project due to access to large data set in thestats package.
 
 [YOK ATLAS](https://yokatlas.yok.gov.tr/) :refers to a web-based platform provided by the Council of Higher Education in Turkey. YOK ATLAS aims to provide comprehensive information about higher education institutions, programs, and related statistics in Turkey.
+
+# *Key Takeaways*
+
+This project aims to analyze the demand and placement trends for Industrial Engineering departments at universities in Ankara. The data, obtained through the "thestats" package from the YOK ATLAS database, has been cleaned to create a dataset focusing solely on preferences and placements related to Industrial Engineering. Data cleaning steps involve excluding unrelated departments, standardizing similar preferences, including only choices of students with full scholarships, and handling missing values.
+
+Among the main objectives of the project are to evaluate competition between universities, analyze the educational quality based on student preferences, and provide guidance for future students in selecting Industrial Engineering programs. The dataset includes key information such as university IDs, years, types (State or Private), program codes, faculties (Engineering), departments (Industrial Engineering), and detailed data on student choices and placements.
+
+During the analysis phase, the project explores the number of choices and placements for Industrial Engineering departments in Ankara between 2018 and 2020. Detailed visualizations focus on Hacettepe University's Industrial Engineering choices in 2018, 2019, and 2020, revealing trends in student preferences over the years and providing valuable insights into the university's attractiveness.
+
+Key findings include the dataset's potential for future analyses, deeper insights into the educational environment, and the project's ability to guide prospective students in making informed decisions. The cleaned dataset lays the foundation for a thorough assessment of universities based on student preferences, facilitating a better understanding of university preferences and potential areas for improvement.
